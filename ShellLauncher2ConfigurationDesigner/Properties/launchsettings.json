@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "ShellLauncher2ConfigurationDesigner (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "ShellLauncher2ConfigurationDesigner (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}

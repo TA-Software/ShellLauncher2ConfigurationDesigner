@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="ShellLauncher2ConfigurationDesigner.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:models="using:ShellLauncher2ConfigurationDesigner.Core.Models"
+    Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
+    mc:Ignorable="d">
+
+    <Grid x:Name="ContentArea">
+        <controls:ListDetailsView BackButtonBehavior="Automatic"
+                                    ItemsSource="{Binding Emails}"
+                                    NoSelectionContent="Select an item to view"
+                                    CompactModeThresholdWidth="720">
+            <controls:ListDetailsView.ItemTemplate>
+                <DataTemplate x:DataType="models:ProfileConfiguration">
+                    <StackPanel Margin="0,8">
+                        <TextBlock Text="{Binding AccountName}"
+                                   Style="{StaticResource SubtitleTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Shell}"
+                                   Style="{StaticResource BodyTextBlockStyle}"
+                                   Opacity=".6"
+                                   MaxLines="1"/>
+                    </StackPanel>
+                </DataTemplate>
+            </controls:ListDetailsView.ItemTemplate>
+            <controls:ListDetailsView.DetailsTemplate>
+                <DataTemplate x:DataType="models:ProfileConfiguration">
+                    <StackPanel Margin="24">
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </controls:ListDetailsView.DetailsTemplate>
+            <controls:ListDetailsView.NoSelectionContentTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <SymbolIcon Symbol="List"
+                                    RenderTransformOrigin=".5,.5">
+                            <SymbolIcon.RenderTransform>
+                                <CompositeTransform
+                                    ScaleX="2"
+                                  ScaleY="2"/>
+                            </SymbolIcon.RenderTransform>
+                        </SymbolIcon>
+                        <TextBlock Text="Select a configuration or create a new one"
+                                   FontSize="24"
+                                   Margin="0,12"/>
+                    </StackPanel>
+                </DataTemplate>
+            </controls:ListDetailsView.NoSelectionContentTemplate>
+            <controls:ListDetailsView.ListCommandBar>
+                <CommandBar OverflowButtonVisibility="Auto">
+                    <AppBarButton Icon="Add" Label="Add"/>
+                </CommandBar>
+            </controls:ListDetailsView.ListCommandBar>
+            <controls:ListDetailsView.DetailsCommandBar>
+                <CommandBar>
+                    <AppBarButton Icon="Delete" Label="Delete" />
+                </CommandBar>
+            </controls:ListDetailsView.DetailsCommandBar>
+        </controls:ListDetailsView>
+    </Grid>
+</Page>
