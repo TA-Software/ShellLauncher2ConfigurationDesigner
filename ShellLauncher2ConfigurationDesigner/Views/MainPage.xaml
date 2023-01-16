@@ -6,14 +6,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     xmlns:models="using:ShellLauncher2ConfigurationDesigner.Core.Models"
-    Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
+    Background="Transparent"
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
         <controls:ListDetailsView BackButtonBehavior="Automatic"
-                                    ItemsSource="{Binding Emails}"
-                                    NoSelectionContent="Select an item to view"
-                                    CompactModeThresholdWidth="720">
+                                  ItemsSource="{Binding Emails}"
+                                  NoSelectionContent="Select an item to view"
+                                  CompactModeThresholdWidth="720"
+                                  Background="Transparent">
             <controls:ListDetailsView.ItemTemplate>
                 <DataTemplate x:DataType="models:ProfileConfiguration">
                     <StackPanel Margin="0,8">
