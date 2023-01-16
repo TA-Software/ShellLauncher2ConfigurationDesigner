@@ -30,26 +30,40 @@
             <controls:ListDetailsView.DetailsTemplate>
                 <DataTemplate x:DataType="models:ProfileConfiguration">
                     <StackPanel Margin="24">
-                        
+
                     </StackPanel>
                 </DataTemplate>
             </controls:ListDetailsView.DetailsTemplate>
             <controls:ListDetailsView.NoSelectionContentTemplate>
                 <DataTemplate>
-                    <StackPanel HorizontalAlignment="Center"
-                                VerticalAlignment="Center">
-                        <SymbolIcon Symbol="List"
-                                    RenderTransformOrigin=".5,.5">
-                            <SymbolIcon.RenderTransform>
-                                <CompositeTransform
-                                    ScaleX="2"
-                                  ScaleY="2"/>
-                            </SymbolIcon.RenderTransform>
-                        </SymbolIcon>
-                        <TextBlock Text="Select a configuration or create a new one"
-                                   FontSize="24"
-                                   Margin="0,12"/>
-                    </StackPanel>
+                    <Grid>
+                        <Rectangle Stroke="{ThemeResource TextControlHeaderForegroundDisabled}" 
+                                   StrokeDashArray="4 4"
+                                   StrokeThickness="2"
+                                   Fill="Transparent" 
+                                   Margin="8"
+                                   RadiusX="4"
+                                   RadiusY="4" />
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <FontIcon Glyph="&#xE1A5;" 
+                                      FontSize="52"/>
+                            <TextBlock Text="Open or create a new configuration"
+                                       Margin="0,8"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}" />
+                            <StackPanel Margin="0,8"
+                                        HorizontalAlignment="Center"
+                                        Orientation="Horizontal">
+                                <Button x:Name="BrowseFileButton"
+                                        Content="Browse files"
+                                        Style="{ThemeResource AccentButtonStyle}" />
+                                <Button x:Name="NewFileButton"
+                                        Content="New file" 
+                                        Margin="8,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
                 </DataTemplate>
             </controls:ListDetailsView.NoSelectionContentTemplate>
             <controls:ListDetailsView.ListCommandBar>
